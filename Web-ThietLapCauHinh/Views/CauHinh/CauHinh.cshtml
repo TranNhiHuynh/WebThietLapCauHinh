@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "CauHinh";
+    Layout = "~/Views/Shared/TrangChu.cshtml";
+    var dsTr = ViewData["dsTr"] as List<MB_Truong>;
+    var dsPh = ViewData["dsPh"] as List<MB_PhanHe>;
+    var dsTrPh = ViewData["dsTrPh"] as List<MB_Truong_PhanHe>;
+
+}
+<h1 style="color:blue ; text-align:center">Hệ thông Quản lý trường học</h1>
+<div class="container-fluid" style="margin-left: 200px">
+    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+        @{
+            foreach (var tr in dsTr)
+            {
+                <li>
+                    <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                        <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline"><b>- @tr.TenTruong</b></span>
+                    </a>
+                    <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                        @{
+                            foreach (var trph in dsTrPh)
+                            {
+                                    foreach (var ph in dsPh)
+                                    {
+                                        if (ph.Id == trph.IDPhanHe && trph.IDTruong == tr.Id)
+                                        {
+                                            <li class="w-100" style="margin-left:30px">
+                                                <a href="#}" class="nav-link px-0">
+                                                    <span class="d-none d-sm-inline">
+                                                        + @ph.TenPhanHe
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        }
+                                    }
+                            }
+
+                        }
+                    </ul>
+                </li>
+            }
+        }
+
+    </ul>
+</div>
+

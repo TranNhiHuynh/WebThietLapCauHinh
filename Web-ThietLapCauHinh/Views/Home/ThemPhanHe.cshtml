@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "ThemPhanHe";
+    Layout = "~/Views/Shared/TrangChu.cshtml";
+}
+<h1 style="color:blue ; text-align:center">Thêm Mới Phân Hệ</h1>
+<div style="margin-left:200px; margin-right: 200px">
+    <form action="/Home/XuLiThemPhanHe" method="post">
+        <div class="mb-3">
+            <label class="form-label">ID</label>
+            <input type="text" class="form-control" placeholder="..." name="id">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Mã phân hệ</label>
+            <input type="text" class="form-control" placeholder="..." name="maPhanHe">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Tên phân hệ</label>
+            <input type="text" class="form-control" placeholder="..." name="tenPhanHe">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Ghi chú</label>
+            <input type="text" class="form-control" placeholder="..." name="ghiChu">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Hiển thị hay không</label>
+            <select class="form-select" aria-label="Default select example" name="isHienThi">
+                <option value="false">Không</option>
+                <option value="true" selected>Có</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Thêm</button>
+        </div>
+    </form>
+</div>
+

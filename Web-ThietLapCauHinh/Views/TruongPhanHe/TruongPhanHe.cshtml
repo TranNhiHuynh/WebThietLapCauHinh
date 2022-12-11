@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "TruongPhanHe";
+    Layout = "~/Views/Shared/TrangChu.cshtml";
+    var dsTrPH = ViewData["dsTrPH"] as List<MB_Truong_PhanHe>;
+}
+<h1 style="color:blue ; text-align:center">Danh Sách Trường - Phân Hệ</h1>
+<div class="container">
+    <a href="/TruongPhanHe/ThemTruongPhanHe" class="btn btn-primary">Thêm</a>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Trường</th>
+                <th scope="col">Phân hệ</th>
+                <th scope="col">Url</th>
+                <th scope="col">Url 2</th>
+                <th scope="col">Url 3</th>
+                <th scope="col">Url Socket</th>
+                <th scope="col">Sup API</th>
+                <th scope="col">Sup API 2</th>
+                <th scope="col">Sup API 3</th>
+                <th scope="col">Ghi chú</th>
+                <th scope="col">Warning RequireSurvey</th>
+                <th scope="col">Features RequireSurvey</th>
+                <th scope="col">Người tạo</th>
+                <th scope="col">Ngày tạo</th>
+                <th scope="col">Người cập nhật</th>
+                <th scope="col">Ngày cập nhật</th>
+                <th scope="col">Version EgovAPI</th>
+                <th scope="col">UrlPayment</th>
+                <th scope="col">Version StudentAPI</th>
+                <th scope="col">Warning Message</th>
+                <th scope="col">Has Ads</th>
+                <th scope="col">Website Url</th>
+                <th scope="col">Version Web</th>
+                <th scope="col">Use HTMLSalaryViewt</th>
+                <th scope="col">Edit </th>
+                <th scope="col">Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{foreach (var tr in dsTrPH)
+                {
+                    <tr>
+                        <td>@tr.Id</td>
+                        <td>@tr.IDTruong</td>
+                        <td>@tr.IDPhanHe</td>
+                        <td>@tr.Url</td>
+                        <td>@tr.Url_2</td>
+                        <td>@tr.Url_3</td>
+                        <td>@tr.UrlSocket</td>
+                        <td>@tr.SubAPI</td>
+                        <td>@tr.SubAPI_2</td>
+                        <td>@tr.SubAPI_3</td>
+                        <td>@tr.GhiChu</td>
+                        <td>@tr.Warning_RequireSurvey</td>
+                        <td>@tr.FeaturesRequireSurvey</td>
+                        <td>@tr.NguoiTao</td>
+                        <td>@tr.NgayTao</td>
+                        <td>@tr.NguoiCapNhat</td>
+                        <td>@tr.NgayCapNhat</td>
+                        <td>@tr.VersionEgovAPI</td>
+                        <td>@tr.UrlPayment</td>
+                        <td>@tr.VersionStudentAPI</td>
+                        <td>@tr.WarningMessage</td>
+
+                        <td>@tr.HasAds</td>
+                        <td>@tr.WebsiteUrl</td>
+                        <td>@tr.VersionWeb</td>
+                        <td>@tr.UseHTMLSalaryView</td>
+                        <td>@Html.ActionLink("Xóa", "XoaTruongPhanHe", "TruongPhanHe", new { key = @tr.Id }, null)</td>
+                        <td>@Html.ActionLink("Update", "CapNhatTruongPhanHe", "TruongPhanHe", new { key = @tr.Id }, null)</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+</div>
+
+

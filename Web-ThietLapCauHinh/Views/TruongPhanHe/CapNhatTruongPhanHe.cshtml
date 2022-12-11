@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "CapNhatTruongPhanHe";
+    Layout = "~/Views/Shared/TrangChu.cshtml";
+    var dsTr = ViewData["dsTr"] as List<MB_Truong>;
+    var dsPh = ViewData["dsPh"] as List<MB_PhanHe>;
+    var TrPh = ViewData["TrPh"] as MB_Truong_PhanHe;
+}
+<h1 style="color:blue ; text-align:center">Cập nhật cấu hình</h1>
+<div style="margin-left:200px; margin-right: 200px">
+    <form action="/TruongPhanHe/XuLiCapNhatTruongPhanHe" method="post">
+        <div class="mb-3">
+            <label class="form-label">ID</label>
+            <input type="text" class="form-control" placeholder="..." name="id" value="@TrPh.Id">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Trường</label>
+            <select class="form-select" aria-label="Default select example" name="idTruong">
+                <option selected value="@TrPh.IDTruong">@dsTr.FirstOrDefault(x => x.Id == TrPh.Id).TenTruong</option>
+
+                @{
+                    foreach (var tr in dsTr)
+                    {
+                        <option value="@tr.Id">@tr.TenTruong</option>
+
+                    }
+                }
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Phân hệ</label>
+            <select class="form-select" aria-label="Default select example" name="idPhanHe">
+                <option selected value="@TrPh.IDPhanHe">@dsPh.FirstOrDefault(x => x.Id == TrPh.Id).TenPhanHe</option>
+                @{
+                    foreach (var ph in dsPh)
+                    {
+                        <option value="@ph.Id">@ph.TenPhanHe</option>
+
+                    }
+                }
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Url</label>
+            <input type="text" class="form-control" placeholder="..." name="url" value="@TrPh.Url">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Url 2</label>
+            <input type="text" class="form-control" placeholder="..." name="url2" value="@TrPh.Url_2">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Url 3</label>
+            <input type="text" class="form-control" placeholder="..." name="url3" value="@TrPh.Url_3">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Url Socket</label>
+            <input type="text" class="form-control" placeholder="..." name="urlsocket" value="@TrPh.UrlSocket">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Sub API</label>
+            <input type="text" class="form-control" placeholder="..." name="subapi" value="@TrPh.SubAPI">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Sub API 2</label>
+            <input type="text" class="form-control" placeholder="..." name="subapi2" value="@TrPh.SubAPI_2">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Sub API 3</label>
+            <input type="text" class="form-control" placeholder="..." name="subapi3" value="@TrPh.SubAPI_3">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Ghi chú</label>
+            <input type="text" class="form-control" placeholder="..." name="ghichu" value="@TrPh.GhiChu">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Warning RequireSurvey</label>
+            <input type="text" class="form-control" placeholder="..." name="warningrequireSurvey" value="@TrPh.Warning_RequireSurvey">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Features RequireSurvey</label>
+            <input type="text" class="form-control" placeholder="..." name="featuresrequireSurvey" value="@TrPh.FeaturesRequireSurvey">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Version EgovAPI</label>
+            <input type="text" class="form-control" placeholder="..." name="versionegovapi" value="@TrPh.VersionEgovAPI">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Url Payment</label>
+            <input type="text" class="form-control" placeholder="..." name="urlpayment" value="@TrPh.UrlPayment">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Version StudentAPI</label>
+            <input type="text" class="form-control" placeholder="..." name="versionstudentapi" value="@TrPh.VersionStudentAPI">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Warning Message</label>
+            <input type="text" class="form-control" placeholder="..." name="warningessage" value="@TrPh.WarningMessage">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">ADS</label>
+            <select class="form-select" aria-label="Default select example" name="hasads" >
+                <option value="true">Có</option>
+                <option value="false">Không</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Website Url</label>
+            <input type="text" class="form-control" placeholder="..." name="Website Url" value="@TrPh.WebsiteUrl">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Version Web</label>
+            <input type="text" class="form-control" placeholder="..." name="versionweb" value="@TrPh.VersionWeb">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Use HTMLSalaryView</label>
+            <select class="form-select" aria-label="Default select example" name="usehtmlsalaryview">
+                <option value="true">Có</option>
+                <option value="false">Không</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Cập nhật</button>
+        </div>
+    </form>
+</div>
+

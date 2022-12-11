@@ -1,0 +1,39 @@
+﻿@model Web_ThietLapCauHinh.MB_PhanHe
+
+@{
+    ViewBag.Title = "CapNhatPhanHe";
+    Layout = "~/Views/Shared/TrangChu.cshtml";
+    var ph = ViewData["ph"] as MB_PhanHe;
+}
+
+<h1 style="color:blue ; text-align:center">Cập Nhật Phân Hệ</h1>
+<div style="margin-left:200px; margin-right: 200px">
+    <form action="/Home/XuLiCapNhatPhanHe" method="post">
+        <div class="mb-3">
+            <label class="form-label">ID</label>
+            <input type="text" class="form-control" placeholder="..." name="id" value="@ph.Id">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Mã phân hệ</label>
+            <input type="text" class="form-control" placeholder="..." name="maPhanHe" value="@ph.MaPhanHe">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Tên phân hệ</label>
+            <input type="text" class="form-control" placeholder="..." name="tenPhanHe" value="@ph.TenPhanHe">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Ghi chú</label>
+            <input type="text" class="form-control" placeholder="..." name="ghiChu" value="@ph.GhiChu">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Hiển thị hay không</label>
+            <select class="form-select" aria-label="Default select example" name="isHienThi">
+                <option value="0">Không</option>
+                <option value="1" selected>Có</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Cập nhật</button>
+        </div>
+    </form>
+</div>

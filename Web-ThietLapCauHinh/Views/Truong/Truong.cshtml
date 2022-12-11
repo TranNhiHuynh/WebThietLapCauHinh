@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Truong";
+    Layout = "~/Views/Shared/TrangChu.cshtml";
+    var dsTR = ViewData["dsTR"] as List<MB_Truong>;
+}
+<h1 style="color:blue ; text-align:center">Danh Sách Trường</h1>
+<div class="container">
+    <a href="/Truong/ThemTruong" class="btn btn-primary">Thêm</a>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Mã trường</th>
+                <th scope="col">Tên trường</th>
+                <th scope="col">Trường thuộc bộ</th>
+                <th scope="col">Logo</th>
+                <th scope="col">Hiển thị</th>
+                <th scope="col">Sử dụng riêng</th>
+                <th scope="col">Thông tin riêng</th>
+                <th scope="col">Ghi chú</th>
+                <th scope="col">Loại</th>
+                <th scope="col">Người tạo</th>
+                <th scope="col">Ngày tạo</th>
+                <th scope="col">Người cập nhật</th>
+                <th scope="col">Ngày cập nhật</th>
+                <th scope="col">Edit </th>
+                <th scope="col">Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{foreach (var tr in dsTR)
+                {
+                    <tr>
+                        <td>@tr.Id</td>
+                        <td>@tr.MaTruong</td>
+                        <td>@tr.TenTruong</td>
+                        <td>@tr.TruocThuocBo</td>
+                        <td>@tr.DuongDanLogo</td>
+                        <td>@tr.IsHienThi</td>
+                        <td>@tr.IsSuDungRieng</td>
+                        <td>@tr.ThongTinRieng</td>
+                        <td>@tr.GhiChu</td>
+                        <td>@tr.Loai</td>
+                        <td>@tr.NguoiTao</td>
+                        <td>@tr.NgayTao</td>
+                        <td>@tr.NguoiCapNhat</td>
+                        <td>@tr.NgayCapNhat</td>
+                        <td>@Html.ActionLink("Xóa", "XoaTruong", "Truong", new { key = @tr.Id }, null)</td>
+                        <td>@Html.ActionLink("Update", "CapNhatTruong", "Truong", new { key = @tr.Id }, null)</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <div class="modal" tabindex="-1" id="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

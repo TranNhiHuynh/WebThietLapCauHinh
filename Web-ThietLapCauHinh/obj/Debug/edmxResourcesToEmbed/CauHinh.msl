@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CauHinhModelStoreContainer" CdmEntityContainer="CauHinhEntities">
+    <EntitySetMapping Name="MB_PhanHe">
+      <EntityTypeMapping TypeName="CauHinhModel.MB_PhanHe">
+        <MappingFragment StoreEntitySet="MB_PhanHe">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MaPhanHe" ColumnName="MaPhanHe" />
+          <ScalarProperty Name="TenPhanHe" ColumnName="TenPhanHe" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="IsHienThi" ColumnName="IsHienThi" />
+          <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NguoiCapNhat" ColumnName="NguoiCapNhat" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MB_Truong">
+      <EntityTypeMapping TypeName="CauHinhModel.MB_Truong">
+        <MappingFragment StoreEntitySet="MB_Truong">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MaTruong" ColumnName="MaTruong" />
+          <ScalarProperty Name="TenTruong" ColumnName="TenTruong" />
+          <ScalarProperty Name="TruocThuocBo" ColumnName="TruocThuocBo" />
+          <ScalarProperty Name="DuongDanLogo" ColumnName="DuongDanLogo" />
+          <ScalarProperty Name="IsHienThi" ColumnName="IsHienThi" />
+          <ScalarProperty Name="IsSuDungRieng" ColumnName="IsSuDungRieng" />
+          <ScalarProperty Name="ThongTinRieng" ColumnName="ThongTinRieng" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="Loai" ColumnName="Loai" />
+          <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NguoiCapNhat" ColumnName="NguoiCapNhat" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MB_Truong_PhanHe">
+      <EntityTypeMapping TypeName="CauHinhModel.MB_Truong_PhanHe">
+        <MappingFragment StoreEntitySet="MB_Truong_PhanHe">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IDTruong" ColumnName="IDTruong" />
+          <ScalarProperty Name="IDPhanHe" ColumnName="IDPhanHe" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Url_2" ColumnName="Url_2" />
+          <ScalarProperty Name="Url_3" ColumnName="Url_3" />
+          <ScalarProperty Name="UrlSocket" ColumnName="UrlSocket" />
+          <ScalarProperty Name="SubAPI" ColumnName="SubAPI" />
+          <ScalarProperty Name="SubAPI_2" ColumnName="SubAPI_2" />
+          <ScalarProperty Name="SubAPI_3" ColumnName="SubAPI_3" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="Warning_RequireSurvey" ColumnName="Warning_RequireSurvey" />
+          <ScalarProperty Name="FeaturesRequireSurvey" ColumnName="FeaturesRequireSurvey" />
+          <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NguoiCapNhat" ColumnName="NguoiCapNhat" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="VersionEgovAPI" ColumnName="VersionEgovAPI" />
+          <ScalarProperty Name="UrlPayment" ColumnName="UrlPayment" />
+          <ScalarProperty Name="VersionStudentAPI" ColumnName="VersionStudentAPI" />
+          <ScalarProperty Name="WarningMessage" ColumnName="WarningMessage" />
+          <ScalarProperty Name="HasAds" ColumnName="HasAds" />
+          <ScalarProperty Name="WebsiteUrl" ColumnName="WebsiteUrl" />
+          <ScalarProperty Name="VersionWeb" ColumnName="VersionWeb" />
+          <ScalarProperty Name="UseHTMLSalaryView" ColumnName="UseHTMLSalaryView" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

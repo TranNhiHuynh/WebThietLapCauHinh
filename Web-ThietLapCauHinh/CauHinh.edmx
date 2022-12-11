@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CauHinhModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MB_PhanHe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="MaPhanHe" Type="nvarchar" MaxLength="20" />
+          <Property Name="TenPhanHe" Type="nvarchar" MaxLength="200" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsHienThi" Type="bit" />
+          <Property Name="NguoiTao" Type="int" />
+          <Property Name="NgayTao" Type="datetime" />
+          <Property Name="NguoiCapNhat" Type="int" />
+          <Property Name="NgayCapNhat" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MB_Truong">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="MaTruong" Type="nvarchar" MaxLength="20" />
+          <Property Name="TenTruong" Type="nvarchar" MaxLength="200" />
+          <Property Name="TruocThuocBo" Type="nvarchar" MaxLength="200" />
+          <Property Name="DuongDanLogo" Type="ntext" />
+          <Property Name="IsHienThi" Type="bit" Nullable="false" />
+          <Property Name="IsSuDungRieng" Type="bit" Nullable="false" />
+          <Property Name="ThongTinRieng" Type="ntext" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
+          <Property Name="Loai" Type="int" />
+          <Property Name="NguoiTao" Type="int" />
+          <Property Name="NgayTao" Type="datetime" />
+          <Property Name="NguoiCapNhat" Type="int" />
+          <Property Name="NgayCapNhat" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MB_Truong_PhanHe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDTruong" Type="int" />
+          <Property Name="IDPhanHe" Type="int" />
+          <Property Name="Url" Type="nvarchar" MaxLength="500" />
+          <Property Name="Url_2" Type="nvarchar" MaxLength="500" />
+          <Property Name="Url_3" Type="nvarchar" MaxLength="500" />
+          <Property Name="UrlSocket" Type="nvarchar" MaxLength="500" />
+          <Property Name="SubAPI" Type="nvarchar" MaxLength="200" />
+          <Property Name="SubAPI_2" Type="nvarchar" MaxLength="200" />
+          <Property Name="SubAPI_3" Type="nvarchar" MaxLength="200" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
+          <Property Name="Warning_RequireSurvey" Type="nvarchar" MaxLength="1000" />
+          <Property Name="FeaturesRequireSurvey" Type="nvarchar" MaxLength="250" />
+          <Property Name="NguoiTao" Type="int" />
+          <Property Name="NgayTao" Type="datetime" />
+          <Property Name="NguoiCapNhat" Type="int" />
+          <Property Name="NgayCapNhat" Type="datetime" />
+          <Property Name="VersionEgovAPI" Type="int" />
+          <Property Name="UrlPayment" Type="nvarchar" MaxLength="500" />
+          <Property Name="VersionStudentAPI" Type="int" />
+          <Property Name="WarningMessage" Type="nvarchar" MaxLength="1000" />
+          <Property Name="HasAds" Type="bit" />
+          <Property Name="WebsiteUrl" Type="nvarchar" MaxLength="500" />
+          <Property Name="VersionWeb" Type="int" />
+          <Property Name="UseHTMLSalaryView" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="CauHinhModelStoreContainer">
+          <EntitySet Name="MB_PhanHe" EntityType="Self.MB_PhanHe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MB_Truong" EntityType="Self.MB_Truong" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MB_Truong_PhanHe" EntityType="Self.MB_Truong_PhanHe" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CauHinhModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MB_PhanHe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="MaPhanHe" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TenPhanHe" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IsHienThi" Type="Boolean" />
+          <Property Name="NguoiTao" Type="Int32" />
+          <Property Name="NgayTao" Type="DateTime" Precision="3" />
+          <Property Name="NguoiCapNhat" Type="Int32" />
+          <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MB_Truong">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="MaTruong" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TenTruong" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TruocThuocBo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DuongDanLogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsHienThi" Type="Boolean" Nullable="false" />
+          <Property Name="IsSuDungRieng" Type="Boolean" Nullable="false" />
+          <Property Name="ThongTinRieng" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Loai" Type="Int32" />
+          <Property Name="NguoiTao" Type="Int32" />
+          <Property Name="NgayTao" Type="DateTime" Precision="3" />
+          <Property Name="NguoiCapNhat" Type="Int32" />
+          <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MB_Truong_PhanHe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDTruong" Type="Int32" />
+          <Property Name="IDPhanHe" Type="Int32" />
+          <Property Name="Url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Url_2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Url_3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UrlSocket" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SubAPI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SubAPI_2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SubAPI_3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Warning_RequireSurvey" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="FeaturesRequireSurvey" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NguoiTao" Type="Int32" />
+          <Property Name="NgayTao" Type="DateTime" Precision="3" />
+          <Property Name="NguoiCapNhat" Type="Int32" />
+          <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+          <Property Name="VersionEgovAPI" Type="Int32" />
+          <Property Name="UrlPayment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="VersionStudentAPI" Type="Int32" />
+          <Property Name="WarningMessage" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="HasAds" Type="Boolean" />
+          <Property Name="WebsiteUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="VersionWeb" Type="Int32" />
+          <Property Name="UseHTMLSalaryView" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="CauHinhEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MB_PhanHe" EntityType="Self.MB_PhanHe" />
+          <EntitySet Name="MB_Truong" EntityType="Self.MB_Truong" />
+          <EntitySet Name="MB_Truong_PhanHe" EntityType="Self.MB_Truong_PhanHe" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CauHinhModelStoreContainer" CdmEntityContainer="CauHinhEntities">
+          <EntitySetMapping Name="MB_PhanHe">
+            <EntityTypeMapping TypeName="CauHinhModel.MB_PhanHe">
+              <MappingFragment StoreEntitySet="MB_PhanHe">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MaPhanHe" ColumnName="MaPhanHe" />
+                <ScalarProperty Name="TenPhanHe" ColumnName="TenPhanHe" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="IsHienThi" ColumnName="IsHienThi" />
+                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+                <ScalarProperty Name="NguoiCapNhat" ColumnName="NguoiCapNhat" />
+                <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MB_Truong">
+            <EntityTypeMapping TypeName="CauHinhModel.MB_Truong">
+              <MappingFragment StoreEntitySet="MB_Truong">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MaTruong" ColumnName="MaTruong" />
+                <ScalarProperty Name="TenTruong" ColumnName="TenTruong" />
+                <ScalarProperty Name="TruocThuocBo" ColumnName="TruocThuocBo" />
+                <ScalarProperty Name="DuongDanLogo" ColumnName="DuongDanLogo" />
+                <ScalarProperty Name="IsHienThi" ColumnName="IsHienThi" />
+                <ScalarProperty Name="IsSuDungRieng" ColumnName="IsSuDungRieng" />
+                <ScalarProperty Name="ThongTinRieng" ColumnName="ThongTinRieng" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="Loai" ColumnName="Loai" />
+                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+                <ScalarProperty Name="NguoiCapNhat" ColumnName="NguoiCapNhat" />
+                <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MB_Truong_PhanHe">
+            <EntityTypeMapping TypeName="CauHinhModel.MB_Truong_PhanHe">
+              <MappingFragment StoreEntitySet="MB_Truong_PhanHe">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IDTruong" ColumnName="IDTruong" />
+                <ScalarProperty Name="IDPhanHe" ColumnName="IDPhanHe" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Url_2" ColumnName="Url_2" />
+                <ScalarProperty Name="Url_3" ColumnName="Url_3" />
+                <ScalarProperty Name="UrlSocket" ColumnName="UrlSocket" />
+                <ScalarProperty Name="SubAPI" ColumnName="SubAPI" />
+                <ScalarProperty Name="SubAPI_2" ColumnName="SubAPI_2" />
+                <ScalarProperty Name="SubAPI_3" ColumnName="SubAPI_3" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="Warning_RequireSurvey" ColumnName="Warning_RequireSurvey" />
+                <ScalarProperty Name="FeaturesRequireSurvey" ColumnName="FeaturesRequireSurvey" />
+                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+                <ScalarProperty Name="NguoiCapNhat" ColumnName="NguoiCapNhat" />
+                <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+                <ScalarProperty Name="VersionEgovAPI" ColumnName="VersionEgovAPI" />
+                <ScalarProperty Name="UrlPayment" ColumnName="UrlPayment" />
+                <ScalarProperty Name="VersionStudentAPI" ColumnName="VersionStudentAPI" />
+                <ScalarProperty Name="WarningMessage" ColumnName="WarningMessage" />
+                <ScalarProperty Name="HasAds" ColumnName="HasAds" />
+                <ScalarProperty Name="WebsiteUrl" ColumnName="WebsiteUrl" />
+                <ScalarProperty Name="VersionWeb" ColumnName="VersionWeb" />
+                <ScalarProperty Name="UseHTMLSalaryView" ColumnName="UseHTMLSalaryView" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

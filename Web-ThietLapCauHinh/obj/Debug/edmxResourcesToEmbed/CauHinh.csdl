@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CauHinhModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="MB_PhanHe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="MaPhanHe" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TenPhanHe" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsHienThi" Type="Boolean" />
+    <Property Name="NguoiTao" Type="Int32" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NguoiCapNhat" Type="Int32" />
+    <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="MB_Truong">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="MaTruong" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TenTruong" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TruocThuocBo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DuongDanLogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsHienThi" Type="Boolean" Nullable="false" />
+    <Property Name="IsSuDungRieng" Type="Boolean" Nullable="false" />
+    <Property Name="ThongTinRieng" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Loai" Type="Int32" />
+    <Property Name="NguoiTao" Type="Int32" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NguoiCapNhat" Type="Int32" />
+    <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="MB_Truong_PhanHe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDTruong" Type="Int32" />
+    <Property Name="IDPhanHe" Type="Int32" />
+    <Property Name="Url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Url_2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Url_3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="UrlSocket" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SubAPI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SubAPI_2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SubAPI_3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Warning_RequireSurvey" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="FeaturesRequireSurvey" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="NguoiTao" Type="Int32" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NguoiCapNhat" Type="Int32" />
+    <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+    <Property Name="VersionEgovAPI" Type="Int32" />
+    <Property Name="UrlPayment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="VersionStudentAPI" Type="Int32" />
+    <Property Name="WarningMessage" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="HasAds" Type="Boolean" />
+    <Property Name="WebsiteUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="VersionWeb" Type="Int32" />
+    <Property Name="UseHTMLSalaryView" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="CauHinhEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MB_PhanHe" EntityType="Self.MB_PhanHe" />
+    <EntitySet Name="MB_Truong" EntityType="Self.MB_Truong" />
+    <EntitySet Name="MB_Truong_PhanHe" EntityType="Self.MB_Truong_PhanHe" />
+  </EntityContainer>
+</Schema>

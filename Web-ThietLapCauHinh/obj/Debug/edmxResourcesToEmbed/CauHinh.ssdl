@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CauHinhModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="MB_PhanHe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="MaPhanHe" Type="nvarchar" MaxLength="20" />
+    <Property Name="TenPhanHe" Type="nvarchar" MaxLength="200" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsHienThi" Type="bit" />
+    <Property Name="NguoiTao" Type="int" />
+    <Property Name="NgayTao" Type="datetime" />
+    <Property Name="NguoiCapNhat" Type="int" />
+    <Property Name="NgayCapNhat" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MB_Truong">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="MaTruong" Type="nvarchar" MaxLength="20" />
+    <Property Name="TenTruong" Type="nvarchar" MaxLength="200" />
+    <Property Name="TruocThuocBo" Type="nvarchar" MaxLength="200" />
+    <Property Name="DuongDanLogo" Type="ntext" />
+    <Property Name="IsHienThi" Type="bit" Nullable="false" />
+    <Property Name="IsSuDungRieng" Type="bit" Nullable="false" />
+    <Property Name="ThongTinRieng" Type="ntext" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
+    <Property Name="Loai" Type="int" />
+    <Property Name="NguoiTao" Type="int" />
+    <Property Name="NgayTao" Type="datetime" />
+    <Property Name="NguoiCapNhat" Type="int" />
+    <Property Name="NgayCapNhat" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MB_Truong_PhanHe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDTruong" Type="int" />
+    <Property Name="IDPhanHe" Type="int" />
+    <Property Name="Url" Type="nvarchar" MaxLength="500" />
+    <Property Name="Url_2" Type="nvarchar" MaxLength="500" />
+    <Property Name="Url_3" Type="nvarchar" MaxLength="500" />
+    <Property Name="UrlSocket" Type="nvarchar" MaxLength="500" />
+    <Property Name="SubAPI" Type="nvarchar" MaxLength="200" />
+    <Property Name="SubAPI_2" Type="nvarchar" MaxLength="200" />
+    <Property Name="SubAPI_3" Type="nvarchar" MaxLength="200" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
+    <Property Name="Warning_RequireSurvey" Type="nvarchar" MaxLength="1000" />
+    <Property Name="FeaturesRequireSurvey" Type="nvarchar" MaxLength="250" />
+    <Property Name="NguoiTao" Type="int" />
+    <Property Name="NgayTao" Type="datetime" />
+    <Property Name="NguoiCapNhat" Type="int" />
+    <Property Name="NgayCapNhat" Type="datetime" />
+    <Property Name="VersionEgovAPI" Type="int" />
+    <Property Name="UrlPayment" Type="nvarchar" MaxLength="500" />
+    <Property Name="VersionStudentAPI" Type="int" />
+    <Property Name="WarningMessage" Type="nvarchar" MaxLength="1000" />
+    <Property Name="HasAds" Type="bit" />
+    <Property Name="WebsiteUrl" Type="nvarchar" MaxLength="500" />
+    <Property Name="VersionWeb" Type="int" />
+    <Property Name="UseHTMLSalaryView" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="CauHinhModelStoreContainer">
+    <EntitySet Name="MB_PhanHe" EntityType="Self.MB_PhanHe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MB_Truong" EntityType="Self.MB_Truong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MB_Truong_PhanHe" EntityType="Self.MB_Truong_PhanHe" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
